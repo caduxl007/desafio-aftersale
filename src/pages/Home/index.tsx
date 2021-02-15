@@ -72,9 +72,7 @@ const Home: React.FC = () => {
           scheduleApi.results.sunset.replace(/[a-z]|\s+/gi, ''),
         );
 
-      const hour = Number.parseFloat(
-        format(new Date().getUTCHours(), 'HH:mm:ss'),
-      );
+      const hour = new Date().getHours();
 
       if (isAfter(hour, sunrise) && isBefore(hour, sunset)) {
         setScheduleAll(true);
